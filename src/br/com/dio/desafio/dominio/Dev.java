@@ -25,8 +25,41 @@ public class Dev {
         }
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Set<Conteudo> getConteudosInscritos() {
+        return conteudosInscritos;
+    }
+
+    public void setConteudosInscritos(Set<Conteudo> conteudosInscritos) {
+        this.conteudosInscritos = conteudosInscritos;
+    }
+
+    public Set<Conteudo> getConteudosConcluidos() {
+        return conteudosConcluidos;
+    }
+
+    public void setConteudosConcluidos(Set<Conteudo> conteudosConcluidos) {
+        this.conteudosConcluidos = conteudosConcluidos;
+    }
+
     public double calcularXP(){
         return this.conteudosConcluidos.stream().mapToDouble(Conteudo::calcularXP).sum();
+    }
+
+    @Override
+    public String toString() {
+        return "Dev{" +
+                "nome='" + nome + '\'' +
+                ", conteudosInscritos=" + conteudosInscritos +
+                ", conteudosConcluidos=" + conteudosConcluidos +
+                '}';
     }
 
     @Override
